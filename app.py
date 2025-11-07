@@ -10,7 +10,7 @@ def redirect_to_site():
         "https://experiment-site-1j72.onrender.com",  # サイト1のURL
         "https://control-site.onrender.com"   # サイト2のURL
     ]
-    chosen_site = random.choice(sites)
+    chosen_site = random.choices(sites, weights=[0.4, 0.6], k=1)[0]
     return redirect(f"{chosen_site}/?from_redirect=1")
 
 # ローカルテスト用（Renderでは不要）
